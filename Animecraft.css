@@ -485,7 +485,7 @@ span{
 .operaters-item:hover{
     border: 3px solid var(--main-color);
     transform: translateY(-10px)scale(1.03);
-    box-shadow: 0 0 50px var(--main-color);
+    box-shadow: 0 0 100px var(--main-color);
 }
 
 .operaters-item h2{
