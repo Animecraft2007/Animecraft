@@ -223,10 +223,10 @@
         <seection class="contact" id="Contact">
             <h2 class="heading">Contact <span>Me</span></h2>
 
-            <form action="#">
+            <form onsubmit="sendEmail{}; reset() ; return false">
                 <div class="input-group">
                     <div class="input-box">
-                        <input type="text" placeholder="Full Name" value="">
+                        <input type="text" placeholder="Full Name"  value="">
                         <input type="email" placeholder="E-mail" value="">
                     </div>
                     <div class="input-box">
@@ -272,6 +272,23 @@
                 &#169;  Minecraft Server | All Right Reserved
             </p>
         </footer>
-    <script src="Animecraft.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+     <script>
+         function sendEmail(){
+             Email.send({
+               Host : "smtp.elasticemail.com",
+               Username : "username",
+               Password : "password",
+               To : 'them@website.com',
+               From : "you@isp.com",
+               Subject : "This is the subject",
+               Body : "And this is the body"
+           }).then(
+        message => alert(message)
+        );
+}
+     </script >
+         <script src="Animecraft.js"></script>
 </body>
 </html>
