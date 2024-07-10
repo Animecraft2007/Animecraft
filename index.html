@@ -226,17 +226,17 @@
             <form onsubmit="sendEmail{}; reset() ; return false">
                 <div class="input-group">
                     <div class="input-box">
-                        <input type="text" placeholder="Full Name"  value="">
-                        <input type="email" placeholder="E-mail" value="">
+                        <input type="text" placeholder="Full Name"  value="Full Name" id="name" required>
+                        <input type="email" placeholder="E-mail" value="E-mail" id="email" required>
                     </div>
                     <div class="input-box">
-                        <input type="number" placeholder="Phone Number" value="" >
-                        <input type="text" placeholder="Subject" value="">
+                        <input type="number" placeholder="Phone Number" value="Phone Number" id="pnumber" required>
+                        <input type="text" placeholder="Subject" value="Subject" id="subject" required>
                     </div>
                 </div>
 
                 <div class="input-group2">
-                   <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                   <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
                    <input type="submit" value="Send Message" class="btn">
                 </div>
             </form>
@@ -277,15 +277,21 @@
      <script>
          function sendEmail(){
              Email.send({
-               Host : "smtp.elasticemail.com",
-               Username : "username",
-               Password : "password",
-               To : 'them@website.com',
-               From : "you@isp.com",
-               Subject : "This is the subject",
-               Body : "And this is the body"
-           }).then(
-        message => alert(message)
+               Host : "smtp.email.com",
+               Username : "bak01072007@gmail.com",
+               Password : "bak1234567890",
+               To : 'bak072007@gmail.com,
+               From : document.getElementById("email").value ,
+               Subject : "New Contact From Enquery",
+               Body : " Name: " + document.getElementById("name").value
+                     +"<br> E-mail: " + document.getElementById("email").value
+                     +"<br> Phone Number: " + document.getElementById("pnumber").value
+                     +"<br> Subject: " + document.getElementById("subject").value
+                      +"<br> Message: " + document.getElementById("message").value
+                        
+            
+           }).then(   
+        message => alert(Your Message Sent Successfully)
         );
 }
      </script >
